@@ -1,88 +1,127 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<h1 align="center">ACE Engineering College </h1>
-<h2 align="center"> An Autonomous institute</h2>
-<hr/>
-<title>Student Registration Form</title>
-<style type="text/css">
-th {
-color: #140e0e;
-font-size: 28spx;
-font-weight: bold;
-text-align: left;
-}
-body {
-background-color:#181a76;
-color:rgb(11, 9, 9);
-font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-</style>
+    <meta charset="utf-8">
+    <title>Student Registration Form</title>
+    <style>
+        th {
+            color: #140e0e;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+        }
+        body {
+            background-color: #181a76;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            margin: auto;
+            border-spacing: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="date"], select {
+            width: 90%;
+            padding: 5px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+        h1, h2 {
+            text-align: center;
+            color: white;
+        }
+        p {
+            text-align: center;
+        }
+        hr {
+            border: 1px solid white;
+            width: 80%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-<form>
-<table width="700" border="0" align="center" cellpadding="0"
-cellspacing="5">
-<tr>
-<th width="25%" height="60">&nbsp;</th>
-<th><p>Student Registration Form</p></th>
-<th width="10%">&nbsp;</th>
-</tr>
-<tr>
-<td><strong>Name:</strong></td>
-<td><input name="name" type="text" size="35" required/></td>
-<td>&nbsp;</td>
-</tr>
-<tr><td><strong>DOB:</strong></td>
-<td><input type="date" type="number" size="35"
-required/></td>
-<td>&nbsp;</td>
-</tr>
-<tr><td><strong>Sex:</strong></td>
-<td><input type="radio" name="gender" value="malea"
-required>Male
-<input type="radio" name="gender"
-value="female">Female</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><strong>Email:</strong></td>
-<td><input name="Email" type="email" size="35"
-required/></td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><strong>Address:</strong></td>
-<td><input name="name2" type="text" size="35"
-required/></td><td>&nbsp;</td>
-</tr>
-<tr>
-<td><strong>Year:</strong></td>
-<td><select id="slct1" name="slct1" onchange= "
-populate(this.id,'slct2')" >
-<option>Select..</option>
-<option value="CSE1">CSE 1st Year</option>
-<option value="CSE2">CSE 2nd Year</option>
-<option value="CSE3">CSE 3rd Year</option>
-<option value="CSE4">CSE 4th Year</option>
-</select></td>
-<td>&nbsp;</td></tr>
-<tr>
-<td><strong>Mobile Number:</strong></td>
-<td><input name="Mobile no. name3" type="text"
-size="35"/></td>
-<td>&nbsp;</td>
-</tr>
-<tr><td></td>
-<td><input type="reset" /><input type="submit"
-value="Submit" onsubmit= "alert('your details have been
-submitted!')"/></td>
-<td>&nbsp;</td>
-</tr>
-</table>
-</form>
-<p align=center><b><i>With a difference in
-Excellence</i></b></p>
+    <h1>ACE Engineering College</h1>
+    <h2>An Autonomous Institute</h2>
+    <hr/>
+    <form>
+        <table>
+            <tr>
+                <th colspan="3" style="text-align: center;">Student Registration Form</th>
+            </tr>
+            <tr>
+                <td><strong>Name:</strong></td>
+                <td><input name="name" type="text" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>DOB:</strong></td>
+                <td><input name="dob" type="date" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Sex:</strong></td>
+                <td>
+                    <input type="radio" name="gender" value="male" required /> Male
+                    <input type="radio" name="gender" value="female" /> Female
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Email:</strong></td>
+                <td><input name="email" type="email" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Address:</strong></td>
+                <td><input name="address" type="text" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Year:</strong></td>
+                <td>
+                    <select id="slct1" name="slct1">
+                        <option value="">Select...</option>
+                        <option value="CSE1">CSE 1st Year</option>
+                        <option value="CSE2">CSE 2nd Year</option>
+                        <option value="CSE3">CSE 3rd Year</option>
+                        <option value="CSE4">CSE 4th Year</option>
+                    </select>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>Mobile Number:</strong></td>
+                <td><input name="mobile" type="text" pattern="\d{10}" placeholder="10-digit number" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="reset" value="Reset" />
+                    <input type="submit" value="Submit" onclick="alert('Your details have been submitted!')" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+    <p><b><i>With a Difference in Excellence</i></b></p>
 </body>
 </html>
